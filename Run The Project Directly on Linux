@@ -1,5 +1,0 @@
-# Step 1: Give permission
-chmod +x budgetbuddy.sh
-
-# Step 2: Run the application
-./budgetbuddy.sh
