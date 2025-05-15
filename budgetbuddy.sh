@@ -32,18 +32,33 @@ init_data_file() {
     fi
 }
 
-# Add an income or expense entry
+# Validate numeric input
+validate_amount() {
+    if [[ ! "$1" =~ ^[0-9]+(\.[0-9]{1,2})?$ ]]; then
+        return 1
+    fi
+    return 0
+}
+
+# Add income or expense
 add_entry() {
-    local type="$1"
-    amount=$(dialog --stdout --inputbox "Enter Amount (₹):" 8 40) || return
-    category=$(dialog --stdout --inputbox "Enter Category (e.g., Food, Salary, Shopping):" 8 40) || return
+    type=$1
+    amount=$(dialog --stdout --inputbox "Enter Amount (₹):" 8 40)
+    category=$(dialog --stdout --inputbox "Enter Category (e.g., Food, Salary, Shopping):" 8 40)
     date=$(date +%F)
 
     if [[ -n "$amount" && -n "$category" ]]; then
-        echo "$amount,$type,$category,$date" >> "$DATA_FILE"
+        if ! validate_amount "$amount"; then
+            echo "${red}Amount must be a number.${reset}"
+            return
+        fi
+        ( 
+            flock -n 9 || exit 1
+            echo "$amount,$type,$category,$date" >> "$DATA_FILE"
+        ) 9>"$LOCK_FILE"
         echo "${green}$type recorded successfully!${reset}"
     else
-        echo "${red}Invalid input or canceled.${reset}"
+        echo "${red}Invalid input.${reset}"
     fi
 }
 
