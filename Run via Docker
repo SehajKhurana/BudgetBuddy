@@ -1,5 +1,0 @@
-# Step 1: Build Docker image
-docker build -t budgetbuddy .
-
-# Step 2: Run the container
-docker run -it budgetbuddy
