@@ -1,24 +1,24 @@
-# 💰 BudgetBuddy - Expense Tracker for Students
+# BudgetBuddy - Expense Tracker for Students
 
 > A lightweight, secure, and interactive CLI-based expense tracker built using Bash, packaged with Docker, and protected with basic firewall rules. Designed especially for students to manage their income and expenses with ease.
 
 ---
 
-## 📌 Features
+##  Features
 
-- 🔐 **Password-Protected Login**
-- 💸 **Add Income & Expenses**
-- 📊 **View Category-Wise Expense Summary**
-- 🧮 **Real-Time Balance Calculation**
-- 💾 **CSV-Based Data Storage**
-- 🗃️ **Data Backup with Timestamp**
-- 📄 **Export Report to PDF**
-- 📦 **Dockerized for Portability**
-- 🔥 **Firewall Script for Basic Security**
+-  **Password-Protected Login**
+-  **Add Income & Expenses**
+-  **View Category-Wise Expense Summary**
+-  **Real-Time Balance Calculation**
+-  **CSV-Based Data Storage**
+-  **Data Backup with Timestamp**
+-  **Export Report to PDF**
+-  **Dockerized for Portability**
+-  **Firewall Script for Basic Security**
 
 ---
 
-## 🧠 Technologies Used
+##  Technologies Used
 
 - **Bash Scripting**
 - **Dialog (CLI UI)**
@@ -29,7 +29,7 @@
 
 ---
 
-## 📂 File Structure
+##  File Structure
 
 ```bash
 .
