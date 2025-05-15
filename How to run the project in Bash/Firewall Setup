@@ -1,0 +1,5 @@
+# Step 1: Give permission
+chmod +x firewall-setup.sh
+
+# Step 2: Run the firewall script (requires sudo)
+sudo ./firewall-setup.sh
