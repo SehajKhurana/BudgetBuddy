@@ -40,3 +40,65 @@
 ├── expenses_report.pdf     # Auto-generated report (after export)
 └── README.md               # Project documentation
 
+How to Run the Project:
+Option 1: Run Directly on Linux
+bash
+# Step 1: Give permission
+chmod +x budgetbuddy.sh
+
+# Step 2: Run the application
+./budgetbuddy.sh
+Option 2: Run via Docker
+bash
+# Step 1: Build Docker image
+docker build -t budgetbuddy .
+
+# Step 2: Run the container
+docker run -it budgetbuddy
+Firewall Setup (Optional but Recommended)
+bash
+# Step 1: Give permission
+chmod +x firewall-setup.sh
+
+# Step 2: Run the firewall script (requires sudo)
+sudo ./firewall-setup.sh
+This script:
+
+Enables UFW
+
+Allows only ports 22 (SSH), 80 (HTTP), and 443 (HTTPS)
+
+Denies all other ports
+
+Sample Use Cases:
+Add Income → Adds an income record into the CSV.
+
+Add Expense → Categorized logging of expenses.
+
+View Summary → Category-wise expense display.
+
+Show Balance → Net balance calculated (Income - Expenses).
+
+Backup Data → Safely backs up CSV with timestamp.
+
+Export PDF Report → Creates a print-ready financial report.
+
+Sample Entry in expenses.csv:
+csv
+Amount,Type,Category,Date
+5000,income,Scholarship,2025-05-12
+200,expense,Snacks,2025-05-13
+Requirements:
+Ensure the following are installed (for full functionality):
+
+dialog
+
+enscript
+
+ghostscript
+
+docker (optional)
+
+ufw (optional, for firewall)
+
+💡 Missing packages will be automatically installed in the Docker container.
